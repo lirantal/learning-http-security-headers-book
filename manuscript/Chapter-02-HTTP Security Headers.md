@@ -12,7 +12,7 @@ In future requests, after the header has been set, the browser consults a _prelo
 
 ### The Risk
 
-The risk that may arise when communicating over a secure HTTPS connection is that a malicious user can perform a Man-In-The-Middle (MITM) attack and down-grade future requests to the webserver to use an HTTP. Once an HTTP connection is established, said the malicious attacker is able to see and read all the data that flows through.
+The risk that may arise when not communicating over a secure HTTPS connection is that a malicious user can perform a Man-In-The-Middle (MITM) attack and down-grade future requests to the webserver to use an HTTP. Once an HTTP connection is established, a malicious attacker is able to see and read all the data that flows through.
 
 > Interesting fact:
 > The [original HSTS draft](https://tools.ietf.org/html/rfc6797) was published in 2011 by Jeff Hodges from PayPal,
