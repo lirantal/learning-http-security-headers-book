@@ -8,9 +8,10 @@ The web, primarily runs on HTTP, but to ensure the security, integrity, and priv
 
 The importance of a secure communications channel shouldn't be undervalued. Instead, it should be a standard for any size of web applications, whether static or dynamic and indeed HTTPS is more prevalent than ever.
 
-An important push for HTTPS has been made by browsers themselves, such as Chrome's continuous attempts to discourage the use of HTTP by portraying any such websites as potentially dangerous. 
+An important push for HTTPS has been made by browsers themselves, such as Chrome's continuous attempts to discourage the use of HTTP by portraying any such websites as potentially dangerous.
 
 A prime example of that is Chrome's recent [hardened policy about mixed content](https://security.googleblog.com/2019/10/no-more-mixed-messages-about-https_3.html) which actively blocks HTTP requests, and it follows prior actions taken to increase the importance of security aspects of the web, such as:
+
 - Clearer indications of a website's security based on [green lock icon in the address bar](https://blog.mozilla.org/security/2017/01/20/communicating-the-dangers-of-non-secure-http/)
 - A dedicated [Security panel](https://developers.google.com/web/updates/2015/12/security-panel) on Chrome's DevTools
 
@@ -21,9 +22,10 @@ A prime example of that is Chrome's recent [hardened policy about mixed content]
 The [HTTP Archive](https://httparchive.org/) is an important initiative by web activists that is tracking various aspects and traits of how the web evolves over time. The projects in the HTTP archive are [open source](https://github.com/HTTPArchive/httparchive.org) and managed by a community of developers.
 
 Some of the well known reports that have been made public and online from the HTTP Archive are:
+
 - [State of the Web](https://httparchive.org/reports/state-of-the-web) - tracks the adoption of web technologies and growing web standards across websites. It reports on data points such as `Total Requests`, `Pages with Vulnerable JavaScript libraries`, and the prevalence of `HTTP/2 Requests` in websites, in the aim of identifying trends.
 - [State of JavaScript](https://httparchive.org/reports/state-of-javascript) - tracks the overall impact of JavaScript in a website, with identifying data points such as the size of JavaScript libraries in a website, the amount of JavaScript requests and the boot-up time which indicates the amount of CPU time each script consumes on a webpage.
-- [Accessibility Report](https://httparchive.org/reports/accessibility) - tracks an overall  accessibility score, as noted by Chrome's Lighthouse tool, and other accessibility traits and standards such as the use of `Image Alt` attributes.
+- [Accessibility Report](https://httparchive.org/reports/accessibility) - tracks an overall accessibility score, as noted by Chrome's Lighthouse tool, and other accessibility traits and standards such as the use of `Image Alt` attributes.
 
 I> Chrome Lighthouse
 I>
@@ -33,7 +35,7 @@ The [data for all HTTP Archive reports](https://httparchive.org/faq#how-do-i-use
 
 #### HTTPS Requests
 
-Using the HTTP Archive as a tool, we can see the growth in trend of secure_by_default with regards to HTTPS adoption by websites.
+Using the HTTP Archive as a tool, we can see the growth in trend of _secure by default_ with regards to HTTPS adoption by websites.
 
 I> Secure by default
 I>
@@ -48,10 +50,11 @@ The earliest data point is January 2016, which states a 24% of desktop websites 
 With the growth of HTTPS, static website hosting platforms have adjusted and adopted similar standards, and help push towards a more secure web.
 
 All of the following platforms for deploying and hosting your websites will serve your content over HTTPS:
-* Vercel
-* Netlify
-* Google's Firebase
-* Heroku
+
+- Vercel
+- Netlify
+- Google's Firebase
+- Heroku
 
 This helps strengthen the ubiquity of HTTPS and its accessibility for small and large websites alike.
 
@@ -67,14 +70,13 @@ I> Smoke test
 I>
 I> Smoke testing is a pattern of running a small sub-set of tests to ensure a minimal yet vital and critical flow or business capability.
 
-
 A relatively recent addition that was introduced to WebPageTest (May 2020) now provides users with security insights as to the status of HTTP security headers and detection of vulnerable JavaScript libraries that are rendered in scanned web pages.
 
 ### Running a scan
 
 Head over to https://webpagetest.org and enter the URL for a web page of your preference. For our demo purposes, we'll use the Fox News website `https://www.foxnews.com/` as a website to scan and see what security information can we find, to further improve the website's security posture.
 
-You may choose to configure other settings for performance, such as tweaking the location origin for running the test, specifying a browser type or maybe even a mobile device, and many other fine tunings. 
+You may choose to configure other settings for performance, such as tweaking the location origin for running the test, specifying a browser type or maybe even a mobile device, and many other fine tunings.
 
 However, we won't be needing any of the special configurations to get a security score so go ahead and hit the **START TEST** button on the right once you've entered a URL:
 
@@ -155,7 +157,7 @@ Click the `Generate report` and let it run and collect the data about the page. 
 
 Very clearly, the website is doing poorly on performance, but notice the best practices score isn't really high either. Let's take a further look down and check what is going on there.
 
-We can click on the `Best Practices` score or scroll down on our own and see the results, which open with the  `Trust and Safety` for the website headline:
+We can click on the `Best Practices` score or scroll down on our own and see the results, which open with the `Trust and Safety` for the website headline:
 
 - Links to cross-origin destinations were detected on the website, which is considered to be unsafe.
 
@@ -183,7 +185,6 @@ I> Continuous Integration
 I>
 I> A Continuous Integration pipeline harness automation to verify a software is building successfully, as well as functioning per an expected threshold and set of tests.
 
-
 It is open source, and based on Node.js, and so if you have a JavaScript tooling environment setup then it can be easily installed.
 
 In a modern Node.js environment we can make use of the `npx` tool to execute a one-off executable npm package.
@@ -191,7 +192,7 @@ In a modern Node.js environment we can make use of the `npx` tool to execute a o
 To start a scan, we can run the following command:
 
 ```
-npx check-my-headers https://example.com 
+npx check-my-headers https://example.com
 ```
 
 This will yield a result as the following screenshot proposed by Ulises Gascon, the author of this tool:
@@ -201,16 +202,15 @@ This will yield a result as the following screenshot proposed by Ulises Gascon, 
 `check-my-headers` can also be used programmatically. As it is an npm package, it can be used as a library, in the following way:
 
 ```js
-const checkMyHeaders = require('check-my-headers')
+const checkMyHeaders = require("check-my-headers");
 
-checkMyHeaders("http://example.com")
-.then(({ messages, headers, status }) => {
-    console.log(`Status code: ${status}`)
-    console.log(`Messages:`)
-    console.log(messages)
-    console.log("Current headers:")
-    console.log(headers)
-})
+checkMyHeaders("http://example.com").then(({ messages, headers, status }) => {
+  console.log(`Status code: ${status}`);
+  console.log(`Messages:`);
+  console.log(messages);
+  console.log("Current headers:");
+  console.log(headers);
+});
 ```
 
 The above will test the web page `http://example.com` for HTTP headers and return a promise, upon which it prints the result data of the scan to the console.
@@ -219,18 +219,18 @@ The above will test the web page `http://example.com` for HTTP headers and retur
 
 We looked at several tools to help us find security issues in web applications:
 
-* WebPageTest - An online web performance and security scanning tool for websites.
-* Lighthouse - Browser-based web assessment tool for performance, accessibility, security, and more.
-* Check My Headers CLI app - a handy command-line Node.js application to test a website's headers.
+- WebPageTest - An online web performance and security scanning tool for websites.
+- Lighthouse - Browser-based web assessment tool for performance, accessibility, security, and more.
+- Check My Headers CLI app - a handy command-line Node.js application to test a website's headers.
 
 ### Test yourself
 
 Let's see how well you know the tools we reviewed.
 
-X> 
 X>
-X> 
-X> 
+X>
+X>
+X>
 
 X> ## Quiz time!
 X>
@@ -243,9 +243,8 @@ X>c) Testing for performance and security issues in websites and giving me insig
 X>
 X>The correct answer is C.
 
-
 X> ### Lighthouse
-X> Lighthouse is available via Chrome DevTools  and helps with:
+X> Lighthouse is available via Chrome DevTools and helps with:
 X>
 X>a) Finding performance issues
 X>b) Finding security issues
@@ -254,18 +253,16 @@ X>d) Finding issues with Progressive Web Apps
 X>
 X>The correct answers are A,B,C, and D.
 
-
 X> ### Keeping up with security
 X> What are some ways you can make sure you have no regressions in your security headers setup?
 X>
 X>a) Run tools like `check-my-headers` in my Continuous Integration systems to fail the build if a regression happens
 X>b) In an End-to-End Continuous Integration setup I can use the WebPageTest API to schedule tests of my website and ensure the security score is the same, or better
 X>c) Run a security penetration test after the web application is published
-X>d) This is a manual and rigorous process that takes time, very expensive and is hard to keep up repeating effectively. 
+X>d) This is a manual and rigorous process that takes time, very expensive and is hard to keep up repeating effectively.
 X>
 X>The correct answers are A and B.
 
 What's next?
 
 If you'd like to keep security in check, you'd want to automate it to keep up with the scale of development. All of the above tools have APIs or integration points that you can connect to continuous integration systems.
-
