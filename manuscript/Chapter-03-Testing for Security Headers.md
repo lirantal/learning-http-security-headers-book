@@ -197,7 +197,7 @@ npx check-my-headers https://example.com
 
 This will yield a result as the following screenshot proposed by Ulises Gascon, the author of this tool:
 
-![Figure 2-4: Test results of check-my-headers Node.js CLI](Figure2-4CheckMyHeaders1)
+![Figure 2-4: Test results of check-my-headers Node.js CLI](Figure2-4CheckMyHeaders1.png)
 
 `check-my-headers` can also be used programmatically. As it is an npm package, it can be used as a library, in the following way:
 
