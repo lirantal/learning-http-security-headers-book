@@ -64,7 +64,7 @@ HTTP security headers are a generic tool that can be employed by any technology 
 
 If you're building Node.js web applications with the help of [Express](http://expressjs.com), then [Helmet](https://helmetjs.github.io) is the go-to npm module to use.
 
-[Helmet](https://helmetjs.github.io) is an open source project which comprises a collection of Express middleware functions that in turn configure HTTP headers by setting the HTTP response object accordingly.
+Helmet is an open source project which comprises a collection of Express middleware functions that in turn configure HTTP headers by setting the HTTP response object accordingly.
 
 ### Example
 
