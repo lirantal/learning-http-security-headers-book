@@ -465,9 +465,9 @@ With Helmet's `csp` middleware this is easily configured:
 const helmet = require("helmet");
 
 app.use(
-  helmet.csp({
+  helmet.contentSecurityPolicy({
     directives: {
-      defaultSrc: ["self"],
+      defaultSrc: ["'self'"],
       reportUri: "https://mydomain.com/report",
     },
   })
@@ -480,9 +480,9 @@ Another useful configuration for Helmet when we are still evaluating a Content S
 const helmet = require("helmet");
 
 app.use(
-  helmet.csp({
+  helmet.contentSecurityPolicy({
     directives: {
-      defaultSrc: ["self"],
+      defaultSrc: ["'self'"],
       reportUri: "https://mydomain.com/report",
     },
     reportOnly: true,
