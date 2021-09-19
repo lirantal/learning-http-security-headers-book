@@ -116,7 +116,7 @@ Once the Express app is deployed, try to access it: `https://hsts-express-exampl
 
 X> ## Quiz time!
 X>
-X> What is special about the request to load the static unplash image (http://hsts-express-example.herokuapp.com/harley-davidson-zGzXsJUBQfs-unsplash.jpg) ?
+X> What is special about the request to load the [static unplash image](http://hsts-express-example.herokuapp.com/harley-davidson-zGzXsJUBQfs-unsplash.jpg) ?
 X>a) It is originally an HTTP request
 X>b) This request is upgraded to an HTTPS request
 X>c) Nothing special about this HTTP request
