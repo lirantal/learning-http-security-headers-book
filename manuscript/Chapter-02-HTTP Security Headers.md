@@ -398,7 +398,7 @@ A full list of supported directives can be found on the [CSP policy directives p
 
 ### Helmet Implementation
 
-Using Helmet we can configure a secure policy for trusted content.
+Using Helmet we can configure a security policy for trusted content.
 Due to the potential for a complex configuration, we will review several different policies in smaller blocks of code to easily explain what is happening when we implement CSP.
 
 The following Node.js code will add Helmet's CSP middleware on each request so that the server responds with a CSP header and a simple security policy.
@@ -617,7 +617,7 @@ These content types are standardized by the IANA organization as MIME types, and
 
 ### Risk
 
-What happens when the browser is instructed an incorrect MIME type for a content, or not at all entirely? In such a case, the browser will attempt to guess the content type by reading and interpreting the content data. This action is referred to as _MIME Sniffing_.
+What happens when the browser is instructed an incorrect MIME type, or not at all entirely? In such a case, the browser will attempt to guess the content type by reading and interpreting the content data. This action is referred to as _MIME Sniffing_.
 
 > More information on MIME Sniffing can be found in the official [MIME Sniffing standard](https://mimesniff.spec.whatwg.org/).
 
