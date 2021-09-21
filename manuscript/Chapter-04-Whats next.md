@@ -71,7 +71,7 @@ The default value set by the browser is `no-referrer-when-downgrade`, however, a
 
 The browser support matrix as to the date of writing this is as follows:
 
-![Figure 3-2: Screenshot of the browser version support for the Feature-Policy HTTP header as provided in the MDN website for it: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy](Figure3-2Next2.png)
+![Figure 3-2: Screenshot of the browser version support for the Referrer-Policy HTTP header as provided in the MDN website for it: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy](Figure3-2Next2.png)
 
 Helmet doesn't yet support the `Feature-Policy` header. However, you may define it in a Node.js web application using one of the following ways:
 
