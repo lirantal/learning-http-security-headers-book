@@ -73,17 +73,6 @@ The browser support matrix as to the date of writing this is as follows:
 
 ![Figure 3-2: Screenshot of the browser version support for the Referrer-Policy HTTP header as provided in the MDN website for it: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy](Figure3-2Next2.png)
 
-Helmet doesn't yet support the `Feature-Policy` header. However, you may define it in a Node.js web application using one of the following ways:
-
-1. Set that HTTP header as part of the web application framework. The following is an example of using Express to set it for all responses:
-
-```js
-app.use(function (req, res, next) {
-  res.setHeader("Feature-Policy", "geolocation 'none'");
-  return next();
-});
-```
-
 2. Use the independent [feature-policy](https://snyk.io/advisor/npm-package/feature-policy) module on npm.
 
 ### Summary
@@ -94,10 +83,11 @@ Gradually implement more HTTP security headers to increase the controls you have
 
 ## Educational resources
 
-Where-as this learning experience isn't geared at being a comprehensive list of all available security headers, you should refer to other web resources such as [Mozilla's Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) and the [W3C specs](https://www.w3.org/standards/) to keep up to date.
+Where-as this learning experience isn't geared at being a comprehensive list of all available security headers, your next step is refer to more web resources such as [Mozilla's Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) and the [W3C specs](https://www.w3.org/standards/) to keep up to date with standards and best practices.
 
-In particular, I want to recommend the following topics to add a lot of relevant context and gaining an edge in understanding web security:
+In particular, I want to recommend the following topics to enrich your knowledge on the topic of security headers and gaining an edge in understanding web security:
 
+- [OWASP Secure Headers Project](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project)
 - Cross-Origin topics, and particularly [Cross-Origin-Resource-Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
 - [Sub-resource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) policies.
 - [Cross-site Request Forgery](https://infosec.mozilla.org/guidelines/web_security#csrf-prevention) and related forms of tokenization.
