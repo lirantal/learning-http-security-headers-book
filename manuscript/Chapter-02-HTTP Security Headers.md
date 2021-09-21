@@ -505,6 +505,14 @@ app.use(
 );
 ```
 
+### Take-home exercise
+
+Why did we learn about the `X-Frame-Options` header in a previous section when the CSP header represent a new breed of mitigating many sort of browser related attacks, including XSS and IFrame Clickjacking attacks?
+
+Firstly, this book serves as an educational content, rather than bullet-points best practices of dogmatic rules to follow, and as such, I'd like to educate you, the reader, about the `X-Frame-Options` header. Moreover, due to the complexity and comprehensive ruleset that the CSP header requires, it is not as easy to implement as the `X-Frame-Options` header, and so teams might want to start with the `X-Frame-Options` header and then add the CSP header later as they gradually enhance their security policy.
+
+As a take-home excericse, I'd like to ask you to implement a content security policy using the CSP header in the innocent website source code that disallows cross-site iframes.
+
 ## Referer and Referrer Policy
 
 When users browse through web pages, the browser may set a request header called `Referer` in certain conditions. This `Referer` header is often used by backend servers to track users' behavior for analytics and other means.
