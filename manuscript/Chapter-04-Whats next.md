@@ -6,13 +6,9 @@ Adopt new browser and HTTP security standards and set a plan to migrate from old
 
 ### X-Frame-Options
 
-We previously reviewed the benefits of using the `X-Frame-Options` as a response HTTP header in helping address click-jacking security vulnerabilities in web applications.
+We previously reviewed the benefits of using the `X-Frame-Options` as a response HTTP header in helping address click-jacking security vulnerabilities in web applications. That said, practices evolve and browsers rapidly adopt new standards and mechanisms. For example, the `ALLOW-FROM` value for the X Frame Options header has been deprecated and is discouraged from being used because modern browser versions don't support it anymore.
 
-That said, practices evolve and browsers rapidly adopt new standards and mechanisms. For example, the `ALLOW-FROM` value for the X Frame Options header has been deprecated and is discouraged from being used because modern browser versions don't support it anymore.
-
-As a migration path, the Content Security Policy standards create a way to adapt to such new standards. One of which is, CSP's `frame-ancestors` directive. For example, setting its value to `'none'` should be compatible with `X-Frame-Options` setting of `DENY` value.
-
-A more complete example of the Content Security Policy in action for click-jacking security controls is:
+As a migration path, the Content Security Policy standards create a way to adapt to such new standards. One of which is, CSP's `frame-ancestors` directive. For example, setting its value to `'none'` should be compatible with `X-Frame-Options` setting of `DENY` value. A more complete example of the Content Security Policy in action for click-jacking security controls is:
 
 ```
 Content-Security-Policy: frame-ancestors 'none';
@@ -20,13 +16,11 @@ Content-Security-Policy: frame-ancestors 'none';
 
 The above CSP will disallow any URLs of embeddable content in `iframe`, `object`, and other HTML elements which are part of the `frame-ancestors` policy.
 
-Do note however, that older browsers may not respect Content-Security-Policy and its directives and as such, you may actually cause a degraded security status. 
-
-To avoid such a problem, consult your supported browser matrix requirements, employ both old and new headers to ensure all bases are covered, until possible to deprecate older security controls that are no longer valid.
+Do note however, that older browsers may not respect Content-Security-Policy and its directives and as such, you may actually cause a degraded security status. To avoid such a problem, consult your supported browser matrix requirements, employ both old and new headers to ensure all bases are covered, until possible to deprecate older security controls that are no longer valid.
 
 ### X-XSS-Protection
 
-Similar to the case with the X Frame Options HTTP header, the `X-XSS-Protection` header is considered deprecated completely and should mandate that you establish and roll out a Content Security Policy HTTP header instead.
+Similar to the case with the `X-Frame-Options` HTTP header, the `X-XSS-Protection` header is considered deprecated completely and should mandate that you establish and roll out a Content Security Policy HTTP header instead.
 
 It's still useful to keep as a header if you are targeting older browsers, but otherwise, note that Chrome and Edge removed their XSS auditor, and Firefox isn't planning on implementing support for X-XSS-Protection.
 
@@ -57,7 +51,7 @@ Furthermore, we can use command-line tools such as Check My Headers and others t
 ## Other browser security headers and controls
 
 The web is an evolving standard and as such, new security controls would be introduced. We should keep an eye on them!
-Embrace and prepare for privacy, feature controls, and future headers such as Referrer-Policy, Feature-Policy, Origin-Policy, Integrity, Accept-CH, Clear-Site-Data.
+Embrace and prepare for privacy, feature controls, and future headers such as `Referrer-Policy`, `Feature-Policy`, `Origin-Policy`, `Integrity`, `Accept-CH`, and `Clear-Site-Data`.
 
 As the web evolves, it creates new standards for us to adopt. This also applies to new HTTP headers and we will quickly review a bunch of them here as your future steps in establishing a wider range of headers.
 
@@ -82,9 +76,10 @@ The browser support matrix as to the date of writing this is as follows:
 Helmet doesn't yet support the `Feature-Policy` header. However, you may define it in a Node.js web application using one of the following ways:
 
 1. Set that HTTP header as part of the web application framework. The following is an example of using Express to set it for all responses:
+
 ```js
 app.use(function (req, res, next) {
-  res.setHeader('Feature-Policy', "geolocation 'none'")
+  res.setHeader("Feature-Policy", "geolocation 'none'");
   return next();
 });
 ```
@@ -103,7 +98,7 @@ Where-as this learning experience isn't geared at being a comprehensive list of 
 
 In particular, I want to recommend the following topics to add a lot of relevant context and gaining an edge in understanding web security:
 
-* Cross-Origin topics, and particularly [Cross-Origin-Resource-Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
-* [Sub-resource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) policies.
-* [Cross-site Request Forgery](https://infosec.mozilla.org/guidelines/web_security#csrf-prevention) and related forms of tokenization.
-* Understanding how [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) work and spec updates such as `SameSite` attribute.
+- Cross-Origin topics, and particularly [Cross-Origin-Resource-Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
+- [Sub-resource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) policies.
+- [Cross-site Request Forgery](https://infosec.mozilla.org/guidelines/web_security#csrf-prevention) and related forms of tokenization.
+- Understanding how [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) work and spec updates such as `SameSite` attribute.
