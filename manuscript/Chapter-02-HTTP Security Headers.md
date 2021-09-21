@@ -267,8 +267,8 @@ Note: In this exercise, there's no strict need for serving the web pages content
 
 Obtain the source code from two official GitHub repositories:
 
-- https://github.com/lirantal/nodejssecurity-headers-xframe-malicious - which serves the contents of a malicious website that embeds a remote iframe in an attempt to trick the user to click on
-- https://github.com/lirantal/nodejssecurity-headers-xframe-innocent - which serves the contents of an innocent website. In our example, this serves as a Twitter profile card.
+- https://github.com/lirantal/nodejssecurity-headers-xframe-malicious - serves the contents of a malicious website that embeds a remote iframe in an attempt to trick the user to click on.
+- https://github.com/lirantal/nodejssecurity-headers-xframe-innocent - serves the contents of an innocent website. In our example, this serves as a Twitter profile card.
 
 Once you cloned both repositories locally we are ready to run both servers.
 
@@ -282,6 +282,8 @@ In each directory where the projects are cloned:
 2. Run `npm start` in two terminal windows so we can have the Express servers run in parallel
 
 The servers will require that you have ports 3000 and 3001 available to bind to by default. Otherwise, you may provide a `PORT` environment variable to each web server project to configure a different local port.
+
+Note: you should be running both servers simulatanously.
 
 #### Exercise 1
 
@@ -302,6 +304,8 @@ It looks like clicking the `Sign up!` button on this website doesn't do what you
 
 #### Exercise 2
 
+In the previous excercise we observed a peculiar behavior, where clicking an website's invitation to a newsletter didn't result in the way we expected.
+
 You're not sure what was going on, right?
 What if you could see the actual element you clicked on?
 
@@ -311,7 +315,13 @@ Add `reveal=1` query parameter to the website, such as: `http://localhost:3000?r
 
 #### Exercise 3
 
-Open `views/home.handlebars` and update the iframe URL to some other websites, maybe Twitter itself but for real this time?
+In the cloned malicious website directory, open `views/home.handlebars` and update the iframe URL to some other websites, such as Twitter itself (i.e: https://twitter.com). The change should look like this:
+
+```html
+<iframe src="https://twitter.com"></iframe>
+```
+
+Re-run the malicious website Express server with the change you made, and visit the page again at `http://localhost:3000`.
 
 D> ## Quiz time!
 D>
@@ -322,11 +332,16 @@ D> Can you try and find a website that should be secure but allows rendering in 
 
 Ok, let's fix things.
 
-Open `./malicious-website/views/home.handlebars` and update the iframe URL to `http://localhost:3001/html/twitter.html` and make sure the other innocent web server, which we cloned earlier, is running.
+In the cloned malicious website directory, open again the file `views/home.handlebars` and update the iframe URL to `http://localhost:3001/html/twitter.html` and make sure the other innocent web server, which we cloned earlier, is running. The change should look like this:
 
-Browse to the malicious website again. Did anything change?
+```html
+<iframe src="http://localhost:3001/html/twitter.html"></iframe>
+```
 
-For the innocent website, let's make sure that we update it to disallow rendering itself as an iframe with the help of Helmet's `frameguard` middleware:
+Save the file changes, re-run the malicious website Express server with the change you made, and visit the page again at `http://localhost:3000`.
+Observe the current behavior. The iframe is now rendering the content of the innoccent website we have running at `http://localhost:3001`
+
+To protect the innocent website, let's make sure that we update it to disallow rendering itself as an iframe with the help of Helmet's `frameguard` middleware:
 
 ```js
 const helmet = require("helmet");
