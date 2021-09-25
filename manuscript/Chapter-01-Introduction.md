@@ -58,15 +58,15 @@ I> Defense in Depth
 I>
 I> A defense in depth is a security concept in which multiple layers of security controls are placed in order to create a better security posture.
 
-## Helmet - a Node.js package for HTTP security headers
+## Helmet - a Node.js package to set HTTP security headers
 
 HTTP security headers are a generic tool that can be employed by any technology at the HTTP medium, such as load balancers, an API gateway, reverse proxies, or web application frameworks.
 
-If you're building Node.js web applications with the help of [Express](http://expressjs.com), then [Helmet](https://helmetjs.github.io) is the go-to npm module to use.
+[Helmet](https://helmetjs.github.io) is an open source project which comprises a collection of HTTP middleware functions that configure HTTP headers by setting the HTTP response object accordingly.
 
-Helmet is an open source project which comprises a collection of Express middleware functions that in turn configure HTTP headers by setting the HTTP response object accordingly.
+If you're building Node.js web applications with the help of [Express](http://expressjs.com), then Helmet is the go-to npm package to use and all source code examples in the book will follow its usage. If you're using other frameworks, such as Fastify, then consult the source-code example in the follow sub-sections.
 
-### Example
+### Helmet and Express
 
 If you're using an Express web application setup, begin by installing the Helmet module:
 
@@ -87,4 +87,43 @@ app.use(
     action: "sameorigin",
   })
 );
+```
+
+### Helmet and Fastify
+
+If you're using the [Fastify](https://github.com/fastify/fastify) web application framework, begin by installing the Helmet wrapper module [fastify-helmet](https://github.com/fastify/fastify-helmet):
+
+```bash
+npm install --save fastify-helmet
+```
+
+Then, in a Fastify web application, register the `fastify-helmet` plugin and provide it a configuration object that includes any of the Helmet-supported security headers:
+
+```js
+const fastify = require("fastify")();
+const helmet = require("fastify-helmet");
+
+fastify.register(helmet, {
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+    },
+  },
+});
+
+fastify.listen(3000, (err) => {
+  if (err) throw err;
+});
+```
+
+By registering the `fastify-helmet` plugin without any configuration, the following default security headers and their values will be set:
+
+```json
+{
+  "x-dns-prefetch-control": "off",
+  "x-frame-options": "SAMEORIGIN",
+  "x-download-options": "noopen",
+  "x-content-type-options": "nosniff",
+  "x-xss-protection": "0"
+}
 ```
