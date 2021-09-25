@@ -52,7 +52,7 @@ The HTTP security headers that we will review are:
 
 Utilizing security headers can be a great strategy to help prevent security vulnerabilities, but a common mistake is to rely solely on them to mitigate such issues. This is because responding to a request with a security header depends on the browser to actually support, implement, and adhere to the specification to enforce it. You may consult the [Strict Transport Security browser compatibility matrix](https://caniuse.com/#feat=stricttransportsecurity) to verify if the browsers used for your web application are supported.
 
-As such, security headers should be used as a defense in depth security mechanism that helps in adding a security control, but they shouldn't be the actual security control to defend against vulnerabilities like Cross-site Scripting.
+As such, security headers should be used as a [defense in depth](<https://en.wikipedia.org/wiki/Defense_in_depth_(computing)>) security mechanism that helps in adding a security control, but they shouldn't be the only security control to defend against vulnerabilities like Cross-site Scripting.
 
 I> Defense in Depth
 I>
@@ -60,7 +60,7 @@ I> A defense in depth is a security concept in which multiple layers of security
 
 ## Helmet - a Node.js package to set HTTP security headers
 
-HTTP security headers are a generic tool that can be employed by any technology at the HTTP medium, such as load balancers, an API gateway, reverse proxies, or web application frameworks.
+HTTP security headers are a generic tool that can be employed by any technology at the HTTP Protocol Layer, such as load balancers, an API gateway, reverse proxies, or web application frameworks.
 
 [Helmet](https://helmetjs.github.io) is an open source project which comprises a collection of HTTP middleware functions that configure HTTP headers by setting the HTTP response object accordingly.
 
