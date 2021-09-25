@@ -66,6 +66,11 @@ HTTP security headers are a generic tool that can be employed by any technology 
 
 If you're building Node.js web applications with the help of [Express](http://expressjs.com), then Helmet is the go-to npm package to use and all source code examples in the book will follow its usage. If you're using other frameworks, such as Fastify, then consult the source-code example in the follow sub-sections.
 
+Helmet wrappers for other Node.js web frameworks are available as follows:
+
+- For Koa refer to the [koa-helmet](https://github.com/venables/koa-helmet) package.
+- For Hapi refer to [blankie](https://github.com/nlf/blankie) package.
+
 ### Helmet and Express
 
 If you're using an Express web application setup, begin by installing the Helmet module:
