@@ -42,11 +42,11 @@ We'll learn about Helmet as a library that can be easily added to any Express pr
 
 The HTTP security headers that we will review are:
 
-- Strict Transport Security
-- X Frame Options
-- Content Security Policy
-- X XSS Protection
-- X Content Type Options
+- `Strict-Transport-Security`: HTTP Strict Transport Security, also known as HSTS, for short. Enforces a secure communication channel to the web server.
+- `X-Frame-Options`: X Frame Options header defines the policies of rendering a web page as an HTML frame.
+- `Content-Security-Policy`: Content Security Policy, or CSP for short, defines a wide range of security policies for web browsers.
+- `X-XSS-Protection`: The Cross-site Scripting protection header instructs the brower to set specific XSS-mitigating policies.
+- `X-Content-Type-Options`: The X Content Type Options is a browser-specific header to instruct the browser to apply strict settings to the `Content-Type` value of the response.
 
 ### Security headers caveats
 
