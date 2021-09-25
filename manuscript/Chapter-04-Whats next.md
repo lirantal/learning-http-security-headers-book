@@ -92,3 +92,10 @@ In particular, I want to recommend the following topics to enrich your knowledge
 - [Sub-resource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) policies.
 - [Cross-site Request Forgery](https://infosec.mozilla.org/guidelines/web_security#csrf-prevention) and related forms of tokenization.
 - Understanding how [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) work and spec updates such as `SameSite` attribute.
+
+## Security headers tooling
+
+The following list of curated resources will help you in your journey of implementing, debugging and monitoring security headers:
+
+- The [report-uri](https://report-uri.com) service
+- [Check My Headers](https://github.com/UlisesGascon/check-my-headers) Node.js CLI
