@@ -139,7 +139,7 @@ Using Lighthouse we can learn how to improve our website's metrics based on insi
 
 It's right there in your Chrome's DevTools console, and chances are that you aren't utilizing it highly enough to get everything you can out of it, including the security aspects.
 
-## Getting started
+### Getting started
 
 Continuing with our previous example, let’s browse over to Fox News’ website.
 
@@ -215,7 +215,7 @@ checkMyHeaders("http://example.com").then(({ messages, headers, status }) => {
 
 The above will test the web page `http://example.com` for HTTP headers and return a promise, upon which it prints the result data of the scan to the console.
 
-## Next Steps
+## Summary
 
 We looked at several tools to help us find security issues in web applications:
 
