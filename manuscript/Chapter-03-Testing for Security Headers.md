@@ -133,7 +133,7 @@ You'll find more information about this topic in the following blog article abou
 
 WebPageTest is an online web tool that is well known for performance testing. Small unknown fact is that relatively recently (May 2020) it received an update to also report on security status of websites. It is not to be considered as a security penetration testing tool, but rather revealing the status of HTTP security headers employed by a website and detecting vulnerable JavaScript libraries.
 
-## Chrome's Lighthouse
+## Lighthouse
 
 Using Lighthouse we can learn how to improve our website's metrics based on insights and recommendations provided after a scan is performed.
 

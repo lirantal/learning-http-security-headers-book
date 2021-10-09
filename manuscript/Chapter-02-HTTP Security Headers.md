@@ -612,7 +612,11 @@ app.use(
 );
 ```
 
-## X XSS Protection
+## Deprecated security headers
+
+The following security headers were originally introduced as part of specific web browser software, to combat security threats such as Cross-site Scripting, and MIME Sniffing, and have since been deprecated in favor of better security controls.
+
+### X XSS Protection
 
 The HTTP header _X-XSS-Protection_ is used by IE8 and IE9 and allows toggling on or off the Cross-Site-Scripting (XSS) filter capability that is built into the browser.
 
@@ -630,7 +634,7 @@ const helmet = require("helmet");
 app.use(helmet.xssFilter());
 ```
 
-## X Content Type Options
+### X Content Type Options
 
 When browsers fetch remote sources of content, such as JavaScript or images, they are instructed using the `Content-Type` header on the type of content.
 
@@ -638,7 +642,7 @@ For example, when a PDF content type is fetched by the browser, the server hints
 
 These content types are standardized by the IANA organization as MIME types, and a [full list of common MIME types can be seen here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types).
 
-### Risk
+#### Risk
 
 What happens when the browser is instructed an incorrect MIME type, or not at all entirely? In such a case, the browser will attempt to guess the content type by reading and interpreting the content data. This action is referred to as _MIME Sniffing_.
 
