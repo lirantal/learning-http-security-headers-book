@@ -20,6 +20,30 @@ For each HTTP security header that can enhance your web application security, yo
 
 I made this book available and open source on GitHub to spread the knowledge, but you may also get a PDF formatted copy of it via Leanpub here: [Web Security: Learning HTTP Security Headers](https://leanpub.com/securityheaders)
 
+
+## In the book
+
+18 Lessons, 8 Quizzes, 30 Code Snippets, and 19 Illustrations to help you learn.
+
+Takeaway Skills:
+
+* Secure web applications using HTTP security headers
+* Understand Content Security Policy
+* Setup Node.js web applications securely
+* Learn how to test and monitor for security headers and vulnerable JavaScript libraries
+* Roadmap for future web controls
+
+## Table of Contents
+
+- [Frontmatter](./manuscript/frontmatter.md)
+- [About the author](./manuscript/about-the-author.md)
+- [About the book](./manuscript/about-the-book.md)
+- [Chapter 1: Introduction](./manuscript/Chapter-01-Introduction.md)
+- [Chapter 2: HTTP Security Headers](./manuscript/Chapter-02-HTTP%20Security%20Headers.md)
+- [Chapter 3: Testing for Security Headers](./manuscript/Chapter-03-Testing%20for%20Security%20Headers.md)
+- [Chapter 4: What's next](./manuscript/Chapter-04-Whats%20next.md)
+
+
 ## Testimonials
 
 ![Michael Azimov](https://s3.amazonaws.com/testimonials.leanpub.com/avatars/1142/small/michael-az.jpeg?1632147545)
@@ -39,18 +63,6 @@ PROGRAMMER/ANALYST
 Sumit Kumar
 FRONT END ENGINEER AND DESIGNER
 > To the point content. Short book - this one is just for me as I like books that are short. I like the interesting facts about technology terms mid-sections. The code examples are good. I like the educational approach of Risk→Solution→Implementation. I like the use of GitHub to serve the example source code. Some topics I found to be complicated, like HTTP Strict Transport Security.
-
-## In the book
-
-18 Lessons, 8 Quizzes, 30 Code Snippets, and 19 Illustrations to help you learn.
-
-Takeaway Skills:
-
-* Secure web applications using HTTP security headers
-* Understand Content Security Policy
-* Setup Node.js web applications securely
-* Learn how to test and monitor for security headers and vulnerable JavaScript libraries
-* Roadmap for future web controls
 
 ## Code Samples
 
