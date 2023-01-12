@@ -18,7 +18,7 @@ This book is a follow-up on Liran Tal's [Essential Node.js Security for Express 
 
 For each HTTP security header that can enhance your web application security, you'll learn what is the overall risk of not implementing it, and what does a proposed solution help with. Finally, you'll learn how to implement and configure the security header with Helmet, a popular and well-maintained Node.js package on npm.
 
-I made this book available and open source on GitHub to spread the knowledge, but you may also get a PDF formatted copy of it via Leanpub here: [Web Security: Learning HTTP Security Headers](https://leanpub.com/securityheaders)
+I made this book available and open source on GitHub to spread the knowledge, but you may also get a PDF formatted copy of it via Leanpub here: [Web Security: Learning HTTP Security Headers](https://leanpub.com/web-security-learning-http-security-headers)
 
 
 ## In the book
