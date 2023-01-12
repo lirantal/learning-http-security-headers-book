@@ -14,7 +14,7 @@ Authored by Liran Tal
 
 ---
 
-This book is a follow-up on Liran Tal's [Essential Node.js Security for Express web applications](https://leanpub.com/nodejssecurity) and teaches you hands-on practical use of HTTP security headers as browser security controls to help secure web applications.
+This book is a follow-up on Liran Tal's [Essential Node.js Security for Express web applications](https://leanpub.com/essential-nodejs-security) and teaches you hands-on practical use of HTTP security headers as browser security controls to help secure web applications.
 
 For each HTTP security header that can enhance your web application security, you'll learn what is the overall risk of not implementing it, and what does a proposed solution help with. Finally, you'll learn how to implement and configure the security header with Helmet, a popular and well-maintained Node.js package on npm.
 
