@@ -12,6 +12,8 @@ Authored by Liran Tal
 ![Twitter Follow](https://img.shields.io/twitter/follow/liran_tal?style=social)
 
 
+[![Web Security: Learning HTTP Security Headers](https://d2sofvawe08yqg.cloudfront.net/web-security-learning-http-security-headers/s_hero?1673559565)](https://leanpub.com/web-security-learning-http-security-headers)
+
 ---
 
 This book is a follow-up on Liran Tal's [Essential Node.js Security for Express web applications](https://leanpub.com/essential-nodejs-security) and teaches you hands-on practical use of HTTP security headers as browser security controls to help secure web applications.
